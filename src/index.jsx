@@ -1,6 +1,13 @@
+// library imports
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+// css imports
+//import 'bootstrap/dist/css/bootstrap.css';
+import './scss/custom.scss';
 import './index.css';
+
+//component imports
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 

@@ -1,25 +1,46 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import {
+  Container,
+  Row,
+  Col,
+} from "reactstrap";
+import Header from "./components/Header";
+import Navigation from "./components/Navigation";
+import NewsCard from "./components/NewsCard";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <Navigation />
+        <Header />
+        <Container>
+          <Row>
+            <Col className="text-center">
+              <h2>News</h2>
+            </Col>
+          </Row>
+          <Row>
+            <Col md={4} className="pb-3">
+              <NewsCard />
+            </Col>
+            <Col md={4}>
+              <NewsCard />
+            </Col>
+            <Col md={4}>
+              <NewsCard />
+            </Col>
+            <Col md={4}>
+              <NewsCard />
+            </Col>
+            <Col md={4}>
+              <NewsCard />
+            </Col>
+            <Col md={4}>
+              <NewsCard />
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }
