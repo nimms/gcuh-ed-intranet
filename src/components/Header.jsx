@@ -1,43 +1,28 @@
-import React, { Component } from 'react'
-import {
-  Container,
-  Row,
-  Col,
-  Jumbotron,
-  Form,
-  FormGroup,
-  Input,
-  Button,
-  Label
-} from 'reactstrap';
+import React, { Component } from 'react';
+import { Container, Row, Col, Jumbotron } from 'reactstrap';
 export default class Header extends Component {
   render() {
     return (
-      <div>
-        <Jumbotron className="d-flex align-items-end text-white">
-          <Container className="text-center">
+      <Container fluid={true} className="text-left align-text-bottom px-0">
+        <Jumbotron className="text-white rounded-0">
+          <Container>
             <Row>
               <Col>
-                <h1>Welcome to the GCUH ED Intranet</h1>
+                <blockquote id="header-news-quote">
+                  <span class="display-5 mr-3">
+                    We are looking for SHO's to fill in overtime shifts on Jan
+                    1, 2, 3 and 4, let me know if you can help
+                    <a href="/header-news" className="header-tag-link ml-1">
+                      Click here
+                    </a>
+                  </span>
+                  <cite>Louisa Saunders</cite>
+                </blockquote>
               </Col>
             </Row>
-            
-            <Form>
-              <Row>
-                <Label sm={2}>Search</Label>
-                <Col sm={8}>
-                  <FormGroup>
-                    <Input type="text" name="search" id="search" placeholder="Search" />
-                  </FormGroup>
-                </Col>
-                <Col md={2} className="text-left">
-                  <Button>Submit</Button>
-                </Col>
-              </Row>
-            </Form>
           </Container>
-        </Jumbotron>        
-      </div>
-    )
+        </Jumbotron>
+      </Container>
+    );
   }
 }

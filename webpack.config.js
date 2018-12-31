@@ -11,7 +11,7 @@ module.exports = env => ({
   resolve: {
     extensions: [".js", ".jsx"]
   },
-  devtool: env === "production" ? "source-map" : "cheap-eval-source-map",
+  devtool: env === "production" ? "source-map" : "source-map",
   entry: {
     main: "./src/index.jsx"
   },

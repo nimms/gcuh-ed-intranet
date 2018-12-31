@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
   Navbar,
   NavbarToggler,
@@ -7,7 +7,7 @@ import {
   NavItem,
   NavLink,
   NavbarBrand
-} from "reactstrap";
+} from 'reactstrap';
 
 export default class Navigation extends Component {
   constructor(props) {
@@ -26,18 +26,28 @@ export default class Navigation extends Component {
   render() {
     return (
       <div>
-        <Navbar color="inverse" light expand="md">
-          <NavbarBrand href="/">GCUHED</NavbarBrand>
+        <Navbar color="inverse" light expand="lg">
+          <NavbarBrand href="/">GCH Emergency</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/components/">Components</NavLink>
+                <NavLink href="/guidelines">GUIDELINES</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">
-                  Github
-                </NavLink>
+                <NavLink href="/patient-info">PATIENT INFO</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/forms">FORMS</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/calendar">CALENDAR</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/training+education">TRAINING/EDUCATION</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/research">RESEARCH</NavLink>
               </NavItem>
             </Nav>
           </Collapse>

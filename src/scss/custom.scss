@@ -5,10 +5,30 @@ $brand-danger: $error_color;
 $body-bg: $background-color;
 
 .jumbotron {
-  background-color: $brand-primary;
-  color: tomato;
-  height: 500px;
+  background-color: #86b3da;
+  height: 60px;
+  padding: 1em 1em;
 }
 
+.body-text {
+  h4 {
+    font-size: 1em;
+    font-weight: 500;
+  }
 
+  h3 {
+    font-size: 1.2em;
+    color: #f0928f;
+  }
+}
+#header-news-quote {
+  font-weight: 400;
+  font-size: 1.2em;
 
+  a {
+    color: white;
+    text-decoration: underline;
+    font-weight: 500;
+    font-size: 1em;
+  }
+}

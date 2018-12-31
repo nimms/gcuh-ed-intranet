@@ -1,47 +1,21 @@
-import React, { Component } from "react";
-import {
-  Container,
-  Row,
-  Col,
-} from "reactstrap";
-import Header from "./components/Header";
-import Navigation from "./components/Navigation";
-import NewsCard from "./components/NewsCard";
+import React, { Component } from 'react';
+import { Container } from 'reactstrap';
+import Header from './components/Header';
+import Navigation from './components/Navigation';
+import Body from './components/Body';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
+library.add(faSearch);
 class App extends Component {
   render() {
     return (
-      <div>
+      <Container fluid={true} className="px-0">
         <Navigation />
         <Header />
-        <Container>
-          <Row>
-            <Col className="text-center">
-              <h2>News</h2>
-            </Col>
-          </Row>
-          <Row>
-            <Col md={4} className="pb-3">
-              <NewsCard />
-            </Col>
-            <Col md={4}>
-              <NewsCard />
-            </Col>
-            <Col md={4}>
-              <NewsCard />
-            </Col>
-            <Col md={4}>
-              <NewsCard />
-            </Col>
-            <Col md={4}>
-              <NewsCard />
-            </Col>
-            <Col md={4}>
-              <NewsCard />
-            </Col>
-          </Row>
-        </Container>
-      </div>
+        <Body />
+      </Container>
     );
   }
 }
