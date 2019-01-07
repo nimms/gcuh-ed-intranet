@@ -9,7 +9,7 @@ export default class Header extends Component {
             <Row>
               <Col>
                 <blockquote id="header-news-quote">
-                  <span class="display-5 mr-3">
+                  <span className="display-5 mr-3">
                     We are looking for SHO's to fill in overtime shifts on Jan
                     1, 2, 3 and 4, let me know if you can help
                     <a href="/header-news" className="header-tag-link ml-1">

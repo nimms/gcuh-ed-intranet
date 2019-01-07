@@ -20,10 +20,6 @@ import NewsSummaryMain from './NewsSummaryMain';
 import ResearchSideBarSummary from './ResearchSideBarSummary';
 import PropTypes from 'prop-types';
 export default class Body extends Component {
-  static propTypes = {
-    prop: PropTypes
-  };
-
   render() {
     return (
       <div>
