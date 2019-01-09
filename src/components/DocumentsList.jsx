@@ -46,7 +46,7 @@ export default class DocumentsList extends Component {
         <Container>
           <h3>Documents</h3>
           <SearchBar
-            placeHolder="Search Documents"
+            placeholder="Search Documents"
             searchFunc={e => this.filterDocumentsByName(e)}
           />
           <ul>

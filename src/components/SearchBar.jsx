@@ -17,7 +17,7 @@ const SearchBar = props => {
             type="text"
             name="search"
             id="search"
-            placeHolder={props.placeHolder || 'Search for anything'}
+            placeholder={props.placeholder || 'Search for anything'}
             onChange={props.searchFunc}
           />
           <InputGroupAddon addonType="append">

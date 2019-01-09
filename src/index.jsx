@@ -17,7 +17,6 @@ import Training from './pages/Training';
 import NotFound from './pages/NotFound';
 
 // css imports
-//import 'bootstrap/dist/css/bootstrap.css';
 import './scss/custom.scss';
 import './index.css';
 
