@@ -7,6 +7,5 @@ describe('SharepointClient', () => {
     const url =
       '/items?fbclid=IwAR2_mv-W_riPcCubDt1ReV4XltXnMwg4JMalXVBV-ZPTogX6kxxe4vntHD8';
     const spClient = new SharepointClient(serverUrl);
-    console.log(spClient.getDocuments(url));
   });
 });
