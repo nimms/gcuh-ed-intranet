@@ -3,6 +3,7 @@ import { Container } from 'reactstrap';
 import Header from './components/Header';
 import Navigation from './components/Navigation';
 import Body from './components/Body';
+import DocumentsList from './components/DocumentsList';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
@@ -14,6 +15,7 @@ class App extends Component {
         <Navigation />
         <Header />
         <Body />
+        <DocumentsList />
       </Container>
     );
   }

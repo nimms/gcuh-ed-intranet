@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes, { string } from 'prop-types';
+import { string } from 'prop-types';
 
 export default class ResearchSideBarSummary extends Component {
   static propTypes = {

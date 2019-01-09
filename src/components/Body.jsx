@@ -1,24 +1,9 @@
 import React, { Component } from 'react';
-
-import {
-  Form,
-  Row,
-  Label,
-  Col,
-  FormGroup,
-  Button,
-  Input,
-  Container,
-  InputGroup,
-  InputGroupAddon,
-  InputGroupText
-} from 'reactstrap';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import SearchBar from './SearchBar';
+import { Row, Col, Container } from 'reactstrap';
 
 import NewsSummaryMain from './NewsSummaryMain';
 import ResearchSideBarSummary from './ResearchSideBarSummary';
-import PropTypes from 'prop-types';
 export default class Body extends Component {
   render() {
     return (
@@ -26,21 +11,7 @@ export default class Body extends Component {
         <Container>
           <Row className="mb-4">
             <Col md={8}>
-              <Form>
-                <InputGroup>
-                  <Input
-                    type="text"
-                    name="search"
-                    id="search"
-                    placeholder="Search for anything"
-                  />
-                  <InputGroupAddon addonType="append">
-                    <InputGroupText>
-                      <FontAwesomeIcon icon="search" />
-                    </InputGroupText>
-                  </InputGroupAddon>
-                </InputGroup>
-              </Form>
+              <SearchBar searchFunc={e => console.log(e.target.value)} />
             </Col>
             <Col md={3} />
           </Row>
