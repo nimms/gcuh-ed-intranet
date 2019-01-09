@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink as ReactRouterNavLink } from 'react-router-dom';
 import {
   Navbar,
   NavbarToggler,
@@ -32,22 +33,58 @@ export default class Navigation extends Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/guidelines">GUIDELINES</NavLink>
+                <NavLink
+                  tag={ReactRouterNavLink}
+                  activeClassName="active"
+                  to="/guidelines"
+                >
+                  GUIDELINES
+                </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/patient-info">PATIENT INFO</NavLink>
+                <NavLink
+                  tag={ReactRouterNavLink}
+                  activeClassName="active"
+                  to="/patient-info"
+                >
+                  PATIENT INFO
+                </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/forms">FORMS</NavLink>
+                <NavLink
+                  tag={ReactRouterNavLink}
+                  activeClassName="active"
+                  to="/forms"
+                >
+                  FORMS
+                </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/calendar">CALENDAR</NavLink>
+                <NavLink
+                  tag={ReactRouterNavLink}
+                  activeClassName="active"
+                  to="/calendar"
+                >
+                  CALENDAR
+                </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/training">TRAINING/EDUCATION</NavLink>
+                <NavLink
+                  tag={ReactRouterNavLink}
+                  activeClassName="active"
+                  to="/training"
+                >
+                  TRAINING/EDUCATION
+                </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/research">RESEARCH</NavLink>
+                <NavLink
+                  tag={ReactRouterNavLink}
+                  activeClassName="active"
+                  to="/research"
+                >
+                  RESEARCH
+                </NavLink>
               </NavItem>
             </Nav>
           </Collapse>

@@ -8,7 +8,9 @@ export default class Calendar extends Component {
       <div>
         <Container fluid={true} className="px-0">
           <Header />
-          <h1>Calendar</h1>
+          <Container>
+            <h1>Calendar</h1>
+          </Container>
         </Container>
       </div>
     );
