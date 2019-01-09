@@ -44,7 +44,7 @@ export default class Navigation extends Component {
                 <NavLink href="/calendar">CALENDAR</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/training+education">TRAINING/EDUCATION</NavLink>
+                <NavLink href="/training">TRAINING/EDUCATION</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="/research">RESEARCH</NavLink>
