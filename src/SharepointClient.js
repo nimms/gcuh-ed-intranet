@@ -1,22 +1,26 @@
 import Axios from 'axios';
-class SharepointClient {
-  constructor(server_address) {
-    this.server_address = server_address;
+
+export default class SPClient {
+  /**
+   * Provides a base axios instance with relevant options set.
+   * Set REACT_APP_SHAREPOINT_BASE_URL in relevant .env file
+   */
+  constructor() {
+    this.axios = Axios.create({
+      baseURL: process.env.REACT_APP_SHAREPOINT_BASE_URL
+    });
   }
 
-  getDocuments = url => {
-    const request_url = `${this.server_address}${url}`;
-    console.log(`GET request to ${request_url}`);
-    const data = '';
-    Axios.get(request_url)
+  /**
+   * Returns array of documents from Sharepoint Server
+   * Set REACT_APP_SHAREPOINT_BASE_URL and REACT_APP_DOCUMENTS_URL in relevant .env file
+   */
+  getDocuments = () => {
+    return this.axios
+      .get(process.env.REACT_APP_DOCUMENTS_URL)
       .then(response => {
-        this.data = response.data;
+        return response.data.d.results;
       })
-      .catch(error => {
-        console.log(error);
-      });
-    return data;
+      .catch(error => console.error(error));
   };
 }
-
-export default SharepointClient;

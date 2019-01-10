@@ -1,11 +1,11 @@
-import SharepointClient from './SharepointClient';
+import SPClient from './SharepointClient';
 
 describe('SharepointClient', () => {
-  test('connects to sharepoint', () => {
-    const serverUrl =
-      'https://9318e5dc-583c-435e-b075-3728d2caf061.mock.pstmn.io';
-    const url =
-      '/items?fbclid=IwAR2_mv-W_riPcCubDt1ReV4XltXnMwg4JMalXVBV-ZPTogX6kxxe4vntHD8';
-    const spClient = new SharepointClient(serverUrl);
+  test('connects to sharepoint', async () => {
+    console.log(`connecting to ${process.env.REACT_APP_SHAREPOINT_BASE_URL}`);
+    const docs = await new SPClient().getDocuments();
+    expect(docs).toBeDefined();
+    //console.log(Object.getOwnPropertyNames(docs));
+    expect(docs).toHaveLength(7);
   });
 });

@@ -6,6 +6,7 @@ import {
   InputGroupAddon,
   InputGroupText
 } from 'reactstrap';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const SearchBar = props => {

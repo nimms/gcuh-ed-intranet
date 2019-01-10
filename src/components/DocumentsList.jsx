@@ -1,43 +1,24 @@
 import React, { Component } from 'react';
+import { Container } from 'reactstrap';
+import { connect } from 'react-redux';
+import { getDocuments } from '../redux/actions/Actions';
+
 import SearchBar from './SearchBar';
 
-import { Container } from 'reactstrap';
-
-import Axios from 'axios';
-
-export default class DocumentsList extends Component {
+export class DocumentsList extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      documents: [],
-      unfilteredDocs: []
+      filteredDocs: []
     };
   }
 
-  filterDocumentsByName(e) {
-    this.setState({
-      documents: this.state.unfilteredDocs.filter(doc =>
-        doc.title.toLowerCase().includes(e.target.value.toLowerCase())
-      )
-    });
+  componentDidMount() {
+    this.props.getDocuments();
   }
 
-  componentDidMount() {
-    Axios.get(
-      'https://9318e5dc-583c-435e-b075-3728d2caf061.mock.pstmn.io/items?fbclid=IwAR2_mv-W_riPcCubDt1ReV4XltXnMwg4JMalXVBV-ZPTogX6kxxe4vntHD8'
-    )
-      .then(json => {
-        console.log(json);
-        return json.data.d.results.map(doc => ({
-          title: doc.Title,
-          attachmentUrl: doc.AttachmentFiles.__deferred.uri
-        }));
-      })
-      .then(docs => {
-        this.setState({ documents: docs, unfilteredDocs: docs });
-      })
-      .catch(error => console.error(error));
+  filterDocumentsByName(e) {
+    console.log(e.target.value);
   }
 
   render() {
@@ -50,10 +31,9 @@ export default class DocumentsList extends Component {
             searchFunc={e => this.filterDocumentsByName(e)}
           />
           <ul>
-            {console.log(this.state.documents)}
-            {this.state.documents.map(doc => (
-              <li>
-                <a href={doc.attachmentUrl}>{doc.title}</a>
+            {this.props.documents.map(doc => (
+              <li key={doc.Id}>
+                <a href={doc.AttachmentFiles.__deferred.uri}>{doc.Title}</a>
               </li>
             ))}
           </ul>
@@ -62,3 +42,14 @@ export default class DocumentsList extends Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    documents: state.remoteDocuments.slice(0, 10)
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { getDocuments }
+)(DocumentsList);

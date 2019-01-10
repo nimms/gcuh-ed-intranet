@@ -2,6 +2,7 @@
   "compilerOptions": {
     "checkJs": true,
     "jsx": "react",
+    "lib": ["es2016"]
   },
   "exclude": [
     "node_modules",
