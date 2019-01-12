@@ -17,4 +17,10 @@ export function getDocuments() {
   };
 }
 
+export function filterDocumentsByName(name) {
+  return function(dispatch) {
+    dispatch({ type: ActionType.FILTER_DOCUMENTS_BY_NAME, payload: name });
+  };
+}
+
 export function filterDocuments(payload) {}

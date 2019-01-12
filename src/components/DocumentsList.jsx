@@ -1,24 +1,17 @@
 import React, { Component } from 'react';
 import { Container } from 'reactstrap';
 import { connect } from 'react-redux';
-import { getDocuments } from '../redux/actions/Actions';
+import { getDocuments, filterDocumentsByName } from '../redux/actions/Actions';
 
 import SearchBar from './SearchBar';
 
 export class DocumentsList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      filteredDocs: []
-    };
-  }
-
   componentDidMount() {
     this.props.getDocuments();
   }
 
   filterDocumentsByName(e) {
-    console.log(e.target.value);
+    this.props.filterDocumentsByName(e.target.value);
   }
 
   render() {
@@ -45,11 +38,18 @@ export class DocumentsList extends Component {
 
 const mapStateToProps = state => {
   return {
-    documents: state.remoteDocuments.slice(0, 10)
+    documents: state.filteredDocuments
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    getDocuments: () => dispatch(getDocuments()),
+    filterDocumentsByName: name => dispatch(filterDocumentsByName(name))
   };
 };
 
 export default connect(
   mapStateToProps,
-  { getDocuments }
+  mapDispatchToProps
 )(DocumentsList);

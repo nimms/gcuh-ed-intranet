@@ -35,7 +35,7 @@ const App = (
         <Navigation />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/Guidelines" component={Guidelines} />
+          <Route path="/guidelines" component={Guidelines} />
           <Route path="/patient-info" component={PatientInfo} />
           <Route path="/forms" component={Forms} />
           <Route path="/research" component={Research} />
