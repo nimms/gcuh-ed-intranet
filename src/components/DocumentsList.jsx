@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
-import { Container } from 'reactstrap';
+import {
+  Container,
+  ListGroup,
+  ListGroupItemText,
+  ListGroupItemHeading,
+  ListGroupItem
+} from 'reactstrap';
 import { connect } from 'react-redux';
 import { getDocuments, filterDocumentsByName } from '../redux/actions/Actions';
 
@@ -14,6 +20,15 @@ export class DocumentsList extends Component {
     this.props.filterDocumentsByName(e.target.value);
   }
 
+  renderDocList = (doc, isActive) => {
+    return (
+      <ListGroupItem active>
+        <ListGroupItemHeading>{doc.Title}</ListGroupItemHeading>
+        <ListGroupItemText>{doc.ServerRedirectedEmbedUri}</ListGroupItemText>
+      </ListGroupItem>
+    );
+  };
+
   render() {
     return (
       <div className="mt-5">
@@ -23,13 +38,17 @@ export class DocumentsList extends Component {
             placeholder="Search Documents"
             searchFunc={e => this.filterDocumentsByName(e)}
           />
-          <ul>
+          {/* results */}
+          <ListGroup className="mt-5">
             {this.props.documents.map(doc => (
-              <li key={doc.Id}>
-                <a href={doc.AttachmentFiles.__deferred.uri}>{doc.Title}</a>
-              </li>
+              <ListGroupItem>
+                <ListGroupItemHeading>{doc.Title}</ListGroupItemHeading>
+                <ListGroupItemText tag="a" href={doc.ServerRedirectedEmbedUri}>
+                  {doc.ServerRedirectedEmbedUri}
+                </ListGroupItemText>
+              </ListGroupItem>
             ))}
-          </ul>
+          </ListGroup>
         </Container>
       </div>
     );

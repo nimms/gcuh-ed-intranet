@@ -18,15 +18,10 @@ import NotFound from './pages/NotFound';
 //redux imports
 import { Provider } from 'react-redux';
 import Store from './redux/store/Store';
-import { addDocuments } from './redux/actions/Actions';
 
 // css imports
 import './scss/custom.scss';
 import './index.css';
-
-//add redux to window object
-window['store'] = Store;
-window['addDocuments'] = addDocuments;
 
 const App = (
   <Provider store={Store}>
