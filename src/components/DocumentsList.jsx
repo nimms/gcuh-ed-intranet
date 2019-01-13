@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
-import {
-  Container,
-  ListGroup,
-  ListGroupItemText,
-  ListGroupItemHeading,
-  ListGroupItem
-} from 'reactstrap';
+import { Container, ListGroup } from 'reactstrap';
+
 import { connect } from 'react-redux';
 import { getDocuments, filterDocumentsByName } from '../redux/actions/Actions';
 
 import SearchBar from './SearchBar';
+import DocListItem from './DocListItem';
 
 export class DocumentsList extends Component {
   componentDidMount() {
@@ -19,15 +15,6 @@ export class DocumentsList extends Component {
   filterDocumentsByName(e) {
     this.props.filterDocumentsByName(e.target.value);
   }
-
-  renderDocList = (doc, isActive) => {
-    return (
-      <ListGroupItem active>
-        <ListGroupItemHeading>{doc.Title}</ListGroupItemHeading>
-        <ListGroupItemText>{doc.ServerRedirectedEmbedUri}</ListGroupItemText>
-      </ListGroupItem>
-    );
-  };
 
   render() {
     return (
@@ -41,12 +28,7 @@ export class DocumentsList extends Component {
           {/* results */}
           <ListGroup className="mt-5">
             {this.props.documents.map(doc => (
-              <ListGroupItem>
-                <ListGroupItemHeading>{doc.Title}</ListGroupItemHeading>
-                <ListGroupItemText tag="a" href={doc.ServerRedirectedEmbedUri}>
-                  {doc.ServerRedirectedEmbedUri}
-                </ListGroupItemText>
-              </ListGroupItem>
+              <DocListItem doc={doc} />
             ))}
           </ListGroup>
         </Container>

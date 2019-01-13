@@ -29,6 +29,10 @@ h2 {
     color: #f0928f;
   }
 }
+
+.list-group-item.active a {
+  color: white;
+}
 #header-news-quote {
   font-weight: 400;
   font-size: 1.2em;
