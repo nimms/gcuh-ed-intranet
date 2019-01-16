@@ -1,4 +1,4 @@
-import Axios from 'axios';
+import * as Axios from 'axios';
 
 export default class SPClient {
   /**
@@ -7,7 +7,7 @@ export default class SPClient {
    */
   constructor() {
     this.axios = Axios.create({
-      baseURL: process.env.REACT_APP_SHAREPOINT_BASE_URL
+      baseURL: process.env.REACT_APP_SHAREPOINT_BASE_URL,
     });
   }
 

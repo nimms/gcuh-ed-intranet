@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import { Container, ListGroup } from 'reactstrap';
 
 import { connect } from 'react-redux';
-import { getDocuments, filterDocumentsByName } from '../redux/actions/Actions';
+import { filterDocumentsByName, getDocuments } from '../redux/actions/Actions';
 
-import SearchBar from './SearchBar';
 import DocListItem from './DocListItem';
+import SearchBar from './SearchBar';
 
+interface IDocumentsListProps {}
 export class DocumentsList extends Component {
   componentDidMount() {
     this.props.getDocuments();
@@ -39,18 +40,18 @@ export class DocumentsList extends Component {
 
 const mapStateToProps = state => {
   return {
-    documents: state.filteredDocuments
+    documents: state.filteredDocuments,
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     getDocuments: () => dispatch(getDocuments()),
-    filterDocumentsByName: name => dispatch(filterDocumentsByName(name))
+    filterDocumentsByName: name => dispatch(filterDocumentsByName(name)),
   };
 };
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(DocumentsList);

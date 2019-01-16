@@ -1,5 +1,5 @@
 import * as ActionType from '../constants/ActionTypes';
-import SPClient from '../../SharepointClient';
+import SPClient from '../../services/SharepointClient';
 
 export function getDocuments() {
   return function(dispatch) {

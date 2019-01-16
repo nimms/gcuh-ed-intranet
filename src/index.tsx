@@ -1,35 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-//nav bar
+// nav bar
 import Navigation from './components/Navigation';
 
-//pages
+// pages
 import Calendar from './pages/Calendar';
 import Forms from './pages/Forms';
 import Guidelines from './pages/Guidelines';
 import Home from './pages/Home';
+import NotFound from './pages/NotFound';
 import PatientInfo from './pages/PatientInfo';
 import Research from './pages/Research';
 import Training from './pages/Training';
-import NotFound from './pages/NotFound';
 
-//redux imports
+// redux imports
 import { Provider } from 'react-redux';
 import Store from './redux/store/Store';
 
 // css imports
-import './scss/custom.scss';
 import './index.css';
+import './scss/custom.scss';
 
+const exact: boolean = true;
 const App = (
   <Provider store={Store}>
     <Router>
       <div>
         <Navigation />
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact={true} path="/" component={Home} />
           <Route path="/guidelines" component={Guidelines} />
           <Route path="/patient-info" component={PatientInfo} />
           <Route path="/forms" component={Forms} />

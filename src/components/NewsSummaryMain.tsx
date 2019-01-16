@@ -5,7 +5,7 @@ export default class NewsSummaryMain extends Component {
   static propTypes = {
     author: string,
     date: string,
-    title: string
+    title: string,
   };
 
   render() {

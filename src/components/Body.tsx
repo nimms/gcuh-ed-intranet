@@ -1,17 +1,24 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import SearchBar from './SearchBar';
-import { Row, Col, Container } from 'reactstrap';
 
+import { Col, Container, Row } from 'reactstrap';
 import NewsSummaryMain from './NewsSummaryMain';
 import ResearchSideBarSummary from './ResearchSideBarSummary';
-export default class Body extends Component {
-  render() {
+
+interface ISearchEvent {
+  target: {
+    value: string;
+  };
+}
+
+export default class Body extends React.Component {
+  public render() {
     return (
       <div>
         <Container>
           <Row className="mb-4">
             <Col md={8}>
-              <SearchBar searchFunc={e => console.log(e.target.value)} />
+              <SearchBar searchFunc={this.searchFunction} />
             </Col>
             <Col md={3} />
           </Row>
@@ -63,5 +70,10 @@ export default class Body extends Component {
         </Container>
       </div>
     );
+  }
+
+  private searchFunction(event: ISearchEvent) {
+    // tslint:disable-next-line:no-console
+    console.log(event.target.value);
   }
 }

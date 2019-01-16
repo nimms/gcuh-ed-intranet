@@ -7,7 +7,7 @@ import {
   Nav,
   NavItem,
   NavLink,
-  NavbarBrand
+  NavbarBrand,
 } from 'reactstrap';
 
 export default class Navigation extends Component {
@@ -16,12 +16,12 @@ export default class Navigation extends Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      isOpen: false
+      isOpen: false,
     };
   }
   toggle() {
     this.setState({
-      isOpen: !this.state.isOpen
+      isOpen: !this.state.isOpen,
     });
   }
   render() {

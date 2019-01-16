@@ -5,7 +5,7 @@ export default class ResearchSideBarSummary extends Component {
   static propTypes = {
     author: string,
     title: string,
-    date: string
+    date: string,
   };
 
   render() {

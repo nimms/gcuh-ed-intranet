@@ -4,7 +4,7 @@ import {
   Input,
   InputGroup,
   InputGroupAddon,
-  InputGroupText
+  InputGroupText,
 } from 'reactstrap';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
