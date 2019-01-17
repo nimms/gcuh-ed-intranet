@@ -9,8 +9,8 @@ export function* getDocuments() {
     yield put({ type: ActionType.DOCUMENTS_LOADED, payload: documents });
   } catch (e) {
     yield put({
-      type: ActionType.SHAREPOINT_CONNECT_ERROR,
       message: e.message,
+      type: ActionType.SHAREPOINT_CONNECT_ERROR,
     });
   }
 }
