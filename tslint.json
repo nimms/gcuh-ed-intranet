@@ -1,7 +1,8 @@
 {
   "rules": {
     "no-console": false,
-    "jsx-no-lambda": false
+    "jsx-no-lambda": false,
+    "no-debugger": false
   },
   "jsRules": {
     "object-literal-sort-keys": false //Disable for javascript

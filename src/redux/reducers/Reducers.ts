@@ -5,6 +5,7 @@ import * as ActionTypes from '../ActionTypes';
 const initialState: ISharepointState = {
   documents: [],
   errors: undefined,
+  filteredDocuments: [],
   loading: false,
 };
 
@@ -13,13 +14,13 @@ const rootReducer: Reducer<ISharepointState> = (
   action,
 ) => {
   switch (action.type) {
-    case action.type === ActionTypes.DOCUMENTS_LOADED: {
+    case ActionTypes.DOCUMENTS_LOADED: {
       return {
         ...state,
-        remoteDocuments: state.documents.concat(action.payload),
+        documents: state.documents.concat(action.payload),
       };
     }
-    case action.type === ActionTypes.FILTER_DOCUMENTS_BY_NAME: {
+    case ActionTypes.FILTER_DOCUMENTS_BY_NAME: {
       const docs = state.documents.filter(doc =>
         doc.Title.toLowerCase().includes(action.payload.toLowerCase()),
       );

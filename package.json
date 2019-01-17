@@ -48,12 +48,10 @@
     "typescript": "^3.2.2"
   },
   "scripts": {
-    "start": "parcel src/index.html",
+    "start": "BROWSER=chrome parcel src/index.html",
     "build": "react-scripts-ts build",
-    "test": "react-scripts-ts test",
-    "eject": "react-scripts-ts eject",
-    "test:debug": "react-scripts-ts --inspect-brk test --no-cache --runInBand --env=jsdom",
-    "now-build": "react-scripts-ts build && mv build dist"
+    "test": "react-scripts-ts test --env=jsdom",
+    "eject": "react-scripts-ts eject"
   },
   "eslintConfig": {
     "extends": "react-app"

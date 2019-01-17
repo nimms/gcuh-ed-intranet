@@ -4,24 +4,18 @@ import { Container, ListGroup } from 'reactstrap';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import { filterDocumentsByName } from '../redux/actions/Actions';
-import { getDocuments } from '../redux/actions/Sagas';
+import * as ActionTypes from '../redux/ActionTypes';
 
 import { IDocumentType, ISharepointState } from 'src/api/Types';
 import DocListItem from './DocListItem';
 import SearchBar from './SearchBar';
 
-interface IPropsFromState {
-  documents: IDocumentType[];
-  getDocuments(): IDocumentType[];
-  filterDocumentsByName(docName: string): IDocumentType[];
-}
-
 interface IPropsFromDispatch {
-  getDocuments: typeof getDocuments;
+  getDocuments: any;
   filterDocumentsByName: typeof filterDocumentsByName;
 }
 
-type AllProps = IPropsFromState & IPropsFromDispatch;
+type AllProps = ISharepointState & IPropsFromDispatch;
 
 export class DocumentsList extends React.Component<AllProps> {
   public componentDidMount() {
@@ -41,7 +35,7 @@ export class DocumentsList extends React.Component<AllProps> {
           />
           {/* results */}
           <ListGroup className="mt-5">
-            {this.props.documents.map(doc => (
+            {this.props.filteredDocuments.map(doc => (
               <DocListItem document={doc} />
             ))}
           </ListGroup>
@@ -58,16 +52,15 @@ export class DocumentsList extends React.Component<AllProps> {
 const mapStateToProps = (state: ISharepointState) => {
   return {
     documents: state.documents,
+    filteredDocuments: state.filteredDocuments,
   };
 };
 
-const mapDispatchToProps = (dispatch: Dispatch) => {
-  return {
-    filterDocumentsByName: (name: string) =>
-      dispatch<any>(filterDocumentsByName(name)),
-    getDocuments: () => dispatch<any>(getDocuments()),
-  };
-};
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+  filterDocumentsByName: (name: string) =>
+    dispatch(filterDocumentsByName(name)),
+  getDocuments: () => dispatch({ type: ActionTypes.START_LOAD_DOCUMENTS }),
+});
 
 export default connect(
   mapStateToProps,

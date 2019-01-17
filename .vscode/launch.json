@@ -24,7 +24,7 @@
       "name": "Debug CRA Tests",
       "type": "node",
       "request": "launch",
-      "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/react-scripts",
+      "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/react-scripts-ts",
       "args": [
         "test",
         "--runInBand",
@@ -36,7 +36,7 @@
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
       "outFiles": [
-        "${workspaceFolder}/**/*.js"
+        "${workspaceFolder}/**/*.ts"
       ],
       "disableOptimisticBPs": true
     },
@@ -58,7 +58,7 @@
       "type": "node",
       "request": "launch",
       "name": "Jest Tests",
-      "program": "${workspaceRoot}/node_modules/.bin/react-scripts",
+      "program": "${workspaceRoot}/node_modules/.bin/react-scripts-ts",
       "args": [
         "-i",
         "test",
