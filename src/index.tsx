@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // nav bar
@@ -23,7 +23,6 @@ import Store from './redux/store/Store';
 import './index.css';
 import './scss/custom.scss';
 
-const exact: boolean = true;
 const App = (
   <Provider store={Store}>
     <Router>

@@ -1,10 +1,10 @@
-import PropTypes from 'prop-types';
 import * as React from 'react';
 import {
   ListGroupItem,
   ListGroupItemHeading,
   ListGroupItemText,
 } from 'reactstrap';
+import { IDocumentType } from 'src/api/Types';
 
 interface IDocListState {
   isHovered: boolean;
@@ -17,7 +17,7 @@ export default class DocListItem extends React.Component<
   IDocListProps,
   IDocListState
 > {
-  constructor(props) {
+  constructor(props: IDocListProps) {
     super(props);
     this.state = {
       isHovered: false,
@@ -43,7 +43,7 @@ export default class DocListItem extends React.Component<
     );
   }
 
-  private handleHover = isActive => {
+  private handleHover = (isActive: boolean) => {
     this.setState({
       isHovered: isActive,
     });

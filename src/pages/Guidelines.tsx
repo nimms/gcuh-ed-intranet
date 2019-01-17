@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import { Container } from 'reactstrap';
-import Header from '../components/Header';
 import DocumentsList from '../components/DocumentsList';
+import Header from '../components/Header';
 
-export default class Guidelines extends Component {
-  render() {
+export default class Guidelines extends React.Component {
+  public render() {
     return (
       <div>
         <Container fluid={true} className="px-0">

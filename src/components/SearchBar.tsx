@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import {
   Form,
   Input,
@@ -8,12 +8,16 @@ import {
 } from 'reactstrap';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 library.add(faSearch);
 
-const SearchBar = props => {
+interface IPropTypes {
+  placeholder: string;
+  searchFunc: any;
+}
+const SearchBar = (props: IPropTypes) => {
   return (
     <div>
       <Form>

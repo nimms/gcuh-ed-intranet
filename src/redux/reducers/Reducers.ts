@@ -1,27 +1,37 @@
-import * as ActionTypes from '../constants/ActionTypes';
+import { Reducer } from 'redux';
+import { ISharepointState } from 'src/api/Types';
+import * as ActionTypes from '../ActionTypes';
 
-const initialState = {
-  filteredDocuments: [],
-  remoteDocuments: [],
+const initialState: ISharepointState = {
+  documents: [],
+  errors: undefined,
+  loading: false,
 };
 
-function rootReducer(state = initialState, action) {
-  if (action.type === ActionTypes.DOCUMENTS_LOADED) {
-    return {
-      ...state,
-      remoteDocuments: state.remoteDocuments.concat(action.payload),
-    };
+const rootReducer: Reducer<ISharepointState> = (
+  state = initialState,
+  action,
+) => {
+  switch (action.type) {
+    case action.type === ActionTypes.DOCUMENTS_LOADED: {
+      return {
+        ...state,
+        remoteDocuments: state.documents.concat(action.payload),
+      };
+    }
+    case action.type === ActionTypes.FILTER_DOCUMENTS_BY_NAME: {
+      const docs = state.documents.filter(doc =>
+        doc.Title.toLowerCase().includes(action.payload.toLowerCase()),
+      );
+      return {
+        ...state,
+        filteredDocuments: docs,
+      };
+    }
+    default: {
+      return state;
+    }
   }
-  if (action.type === ActionTypes.FILTER_DOCUMENTS_BY_NAME) {
-    let docs = state.remoteDocuments.filter(doc =>
-      doc.Title.toLowerCase().includes(action.payload.toLowerCase()),
-    );
-    return {
-      ...state,
-      filteredDocuments: docs,
-    };
-  }
-  return state;
-}
+};
 
 export default rootReducer;

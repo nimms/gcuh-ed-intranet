@@ -3,6 +3,9 @@
     "no-console": false,
     "jsx-no-lambda": false
   },
+  "jsRules": {
+    "object-literal-sort-keys": false //Disable for javascript
+  },
   
   "extends": [
     "tslint:recommended",

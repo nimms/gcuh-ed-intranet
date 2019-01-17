@@ -18,7 +18,7 @@ export default class Body extends React.Component {
         <Container>
           <Row className="mb-4">
             <Col md={8}>
-              <SearchBar searchFunc={this.searchFunction} />
+              <SearchBar placeholder={''} searchFunc={this.searchFunction} />
             </Col>
             <Col md={3} />
           </Row>

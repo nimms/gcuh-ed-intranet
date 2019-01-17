@@ -1,14 +1,12 @@
-import React, { Component } from 'react';
-import { string } from 'prop-types';
+import * as React from 'react';
 
-export default class NewsSummaryMain extends Component {
-  static propTypes = {
-    author: string,
-    date: string,
-    title: string,
-  };
-
-  render() {
+interface IPropTypes {
+  author: string;
+  date: string;
+  title: string;
+}
+export default class NewsSummaryMain extends React.Component<IPropTypes> {
+  public render() {
     return (
       <div className="news-item-summary-main">
         <h4 className="text-muted">

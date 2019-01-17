@@ -1,14 +1,15 @@
-import React, { Component } from 'react';
-import { string } from 'prop-types';
+import * as React from 'react';
 
-export default class ResearchSideBarSummary extends Component {
-  static propTypes = {
-    author: string,
-    title: string,
-    date: string,
-  };
+interface IPropTypes {
+  author: string;
+  title: string;
+  date?: string;
+}
 
-  render() {
+export default class ResearchSideBarSummary extends React.Component<
+  IPropTypes
+> {
+  public render() {
     return (
       <div>
         <h3>{this.props.title}</h3>

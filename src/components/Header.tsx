@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { Container, Row, Col, Jumbotron } from 'reactstrap';
-export default class Header extends Component {
-  render() {
+import * as React from 'react';
+import { Col, Container, Jumbotron, Row } from 'reactstrap';
+export default class Header extends React.Component {
+  public render() {
     return (
       <Container fluid={true} className="text-left align-text-bottom px-0">
         <Jumbotron className="text-white rounded-0">

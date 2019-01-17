@@ -1,17 +1,21 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import { NavLink as ReactRouterNavLink } from 'react-router-dom';
 import {
-  Navbar,
-  NavbarToggler,
   Collapse,
   Nav,
+  Navbar,
+  NavbarBrand,
+  NavbarToggler,
   NavItem,
   NavLink,
-  NavbarBrand,
 } from 'reactstrap';
 
-export default class Navigation extends Component {
-  constructor(props) {
+interface INavigationState {
+  isOpen: boolean;
+}
+
+export default class Navigation extends React.Component<{}, INavigationState> {
+  constructor(props: any) {
     super(props);
 
     this.toggle = this.toggle.bind(this);
@@ -19,19 +23,14 @@ export default class Navigation extends Component {
       isOpen: false,
     };
   }
-  toggle() {
-    this.setState({
-      isOpen: !this.state.isOpen,
-    });
-  }
-  render() {
+  public render() {
     return (
       <div>
-        <Navbar color="inverse" light expand="lg">
+        <Navbar color="inverse" light={true} expand="lg">
           <NavbarBrand href="/">GCH Emergency</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
+          <Collapse isOpen={this.state.isOpen} navbar={true}>
+            <Nav className="ml-auto" navbar={true}>
               <NavItem>
                 <NavLink
                   tag={ReactRouterNavLink}
@@ -91,5 +90,10 @@ export default class Navigation extends Component {
         </Navbar>
       </div>
     );
+  }
+  private toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen,
+    });
   }
 }

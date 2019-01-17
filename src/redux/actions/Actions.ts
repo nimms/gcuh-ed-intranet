@@ -1,17 +1,6 @@
-import * as ActionType from '../constants/ActionTypes';
-import SPClient from '../../services/SharepointClient';
+import { action } from 'typesafe-actions';
+import * as ActionType from '../ActionTypes';
 
-export function getDocuments() {
-  return function(dispatch) {
-    // load sharepoint documents
-    return new SPClient().getDocuments().then(data => {
-      dispatch({ type: ActionType.DOCUMENTS_LOADED, payload: data });
-    });
-  };
-}
-
-export function filterDocumentsByName(name) {
-  return function(dispatch) {
-    dispatch({ type: ActionType.FILTER_DOCUMENTS_BY_NAME, payload: name });
-  };
-}
+export const filterDocumentsByName = (name: string) => {
+  action(ActionType.FILTER_DOCUMENTS_BY_NAME, name);
+};
