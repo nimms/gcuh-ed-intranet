@@ -42,11 +42,13 @@
     "@types/react": "^16.7.18",
     "@types/react-dom": "^16.0.11",
     "@types/reactstrap": "^6.4.4",
+    "babel-core": "^6.26.3",
+    "parcel-bundler": "^1.11.0",
     "tslint-config-prettier": "^1.17.0",
     "typescript": "^3.2.2"
   },
   "scripts": {
-    "start": "BROWSER=FIREFOX react-scripts-ts start",
+    "start": "parcel src/index.html",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test",
     "eject": "react-scripts-ts eject",
