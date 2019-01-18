@@ -1,10 +1,14 @@
+// css imports
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+// redux imports
+import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // nav bar
 import Navigation from './components/Navigation';
-
 // pages
 import Calendar from './pages/Calendar';
 import Forms from './pages/Forms';
@@ -14,13 +18,7 @@ import NotFound from './pages/NotFound';
 import PatientInfo from './pages/PatientInfo';
 import Research from './pages/Research';
 import Training from './pages/Training';
-
-// redux imports
-import { Provider } from 'react-redux';
 import Store from './redux/store/Store';
-
-// css imports
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = (
   <Provider store={Store}>
