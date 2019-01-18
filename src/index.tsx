@@ -20,8 +20,7 @@ import { Provider } from 'react-redux';
 import Store from './redux/store/Store';
 
 // css imports
-import './index.css';
-import './scss/custom.scss';
+import './scss/custom.css';
 
 const App = (
   <Provider store={Store}>

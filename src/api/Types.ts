@@ -5,7 +5,7 @@ export interface IDocumentType {
 }
 
 export interface ISharepointState {
-  loading: boolean;
+  loading?: boolean;
   documents: IDocumentType[];
   filteredDocuments: IDocumentType[];
   errors?: string;

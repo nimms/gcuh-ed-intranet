@@ -6,7 +6,7 @@ import { Dispatch } from 'redux';
 import { filterDocumentsByName } from '../redux/actions/Actions';
 import * as ActionTypes from '../redux/ActionTypes';
 
-import { IDocumentType, ISharepointState } from 'src/api/Types';
+import { ISharepointState } from 'src/api/Types';
 import DocListItem from './DocListItem';
 import SearchBar from './SearchBar';
 

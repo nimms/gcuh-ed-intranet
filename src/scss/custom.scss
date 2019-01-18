@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700|Rubik:400,500,700');
-@import 'node_modules/bootstrap/scss/bootstrap.scss';
+@import '~bootstrap/scss/bootstrap.scss';
 @import './_colors.scss';
+
 $brand-primary: $primary-color;
 $brand-danger: $error_color;
 $body-bg: $background-color;

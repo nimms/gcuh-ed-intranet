@@ -14,7 +14,7 @@
       "name": "Chrome",
       "type": "chrome",
       "request": "launch",
-      "url": "http://localhost:3000",
+      "url": "http://localhost:1234",
       "webRoot": "${workspaceRoot}/src",
       "sourceMapPathOverrides": {
         "webpack:///src/*": "${webRoot}/*"
