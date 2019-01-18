@@ -1,4 +1,6 @@
 import * as React from 'react';
+import styled from 'styled-components';
+
 import SearchBar from './SearchBar';
 
 import { Col, Container, Row } from 'reactstrap';
@@ -11,6 +13,18 @@ interface ISearchEvent {
   };
 }
 
+const BodyContent = styled.div`
+  h4 {
+    font-size: 1em;
+    font-weight: 500;
+  }
+
+  h3 {
+    font-size: 1.2em;
+    color: #f0928f;
+  }
+`;
+
 export default class Body extends React.Component {
   public render() {
     return (
@@ -22,7 +36,7 @@ export default class Body extends React.Component {
             </Col>
             <Col md={3} />
           </Row>
-          <Row className="body-text">
+          <BodyContent className="row">
             <Col md={8}>
               <h2>News</h2>
               <NewsSummaryMain
@@ -66,7 +80,7 @@ export default class Body extends React.Component {
                 Investigate the use of Fibrinogen concentrate vs cryoprecipitate
               </ResearchSideBarSummary>
             </Col>
-          </Row>
+          </BodyContent>
         </Container>
       </div>
     );

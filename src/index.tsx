@@ -20,7 +20,7 @@ import { Provider } from 'react-redux';
 import Store from './redux/store/Store';
 
 // css imports
-import './scss/custom.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = (
   <Provider store={Store}>

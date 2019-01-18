@@ -52,11 +52,8 @@
     "webpack-cli": "^3.2.1"
   },
   "scripts": {
-    "sass:build": "node-sass src/ -o src/ --importer=node_modules/node-sass-tilde-importer",
-    "sass:watch": "npm run sass:build -- --watch --recursive",
-    "source:watch": "react-scripts-ts start",
-    "start": "npm-run-all --parallel sass:watch source:watch",
-    "build": "npm run sass:build && react-scripts-ts build",
+    "start": "react-scripts-ts start",
+    "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject"
   },
